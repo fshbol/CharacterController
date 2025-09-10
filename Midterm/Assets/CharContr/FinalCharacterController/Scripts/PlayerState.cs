@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Liliput.FinalCharacterController
+namespace CharContr.FinalCharacterController
 {
     public class PlayerState : MonoBehaviour
     {

@@ -1951,6 +1951,8 @@ GameObject:
   - component: {fileID: 1471231099453958471}
   - component: {fileID: 1456079124195933480}
   - component: {fileID: 8088502720128471744}
+  - component: {fileID: -663214716991848515}
+  - component: {fileID: 8924774715959643037}
   m_Layer: 0
   m_Name: ThirdPersonController
   m_TagString: Untagged
@@ -1987,7 +1989,7 @@ Animator:
   m_GameObject: {fileID: 3452432160793779006}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: de13a7420582ded45a8d7d3f96889aca, type: 3}
-  m_Controller: {fileID: 9100000, guid: f989a8296622373408036db3016f78a3, type: 2}
+  m_Controller: {fileID: 9100000, guid: a907a13c88a36f84397a859ae88ea2d1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2021,7 +2023,7 @@ CharacterController:
   m_Radius: 0.3
   m_SlopeLimit: 45
   m_StepOffset: 0.3
-  m_SkinWidth: 0.08
+  m_SkinWidth: 0.0001
   m_MinMoveDistance: 0.00001
   m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!114 &1456079124195933480
@@ -2038,10 +2040,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterController: {fileID: 1471231099453958471}
   _playerCamera: {fileID: 3280510920142464064}
-  _animator: {fileID: 5400097020638112618}
-  runAcceleration: 50
+  runAcceleration: 35
   runSpeed: 4
-  drag: 30
+  drag: 15
+  gravity: 25
+  jumpSpeed: 1
+  movingThreshold: 0.01
+  sprintAcceleration: 50
+  sprintSpeed: 7
   lookSenseH: 0.1
   lookSenseV: 0.1
   lookLimitV: 89
@@ -2057,6 +2063,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e684598c02dcf4fa8c4a2b08a572c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  holdToSprint: 1
+--- !u!114 &-663214716991848515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3452432160793779006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f5ae6d4a792e1e4eb92638a2a28ebf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 5400097020638112618}
+  locomotionBlendSpeed: 4
+--- !u!114 &8924774715959643037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3452432160793779006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53391ebf43844e04ebcbb3a7ee61c85c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <CurrentPlayerMovementState>k__BackingField: 0
 --- !u!1 &3546986248577086437
 GameObject:
   m_ObjectHideFlags: 0
